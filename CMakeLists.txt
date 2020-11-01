@@ -45,6 +45,10 @@ FILE(GLOB SOURCE_FILES *.hpp *.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/Navio2_cpp/*.cpp
         )
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} flight_scenario_node/main.cpp ${SOURCE_FILES})
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+
+add_executable(example_node example_node/example_node.cpp ${SOURCE_FILES})
+add_dependencies(example_node ${catkin_EXPORTED_TARGETS})
+target_link_libraries(example_node ${catkin_LIBRARIES})

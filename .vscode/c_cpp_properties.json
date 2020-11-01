@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/pedrohrpbs/catkin_ws_NAVIO/src/common_srv/**",
+                "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller_temp/**"
+                "${default}"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

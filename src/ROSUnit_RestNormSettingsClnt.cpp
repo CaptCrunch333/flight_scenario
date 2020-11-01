@@ -21,7 +21,6 @@ void ROSUnit_RestNormSettingsClnt::process(DataMessage* t_msg, Port* t_port) {
         srv.request.delete_existing_waypoints = _settings_msg->delete_existing_waypoints;
         srv.request.max_norm = _settings_msg->getMaxNorm();
 
-
         bool success = _clnt_rest_norm_settings.call(srv);
 
         if (success)

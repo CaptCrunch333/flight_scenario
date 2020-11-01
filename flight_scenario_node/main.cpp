@@ -36,7 +36,6 @@
 #include "SetCameraStatus.hpp"
 #include <math.h>
 
-
 #define TESTING
 #undef MISSION
 #undef MRFT_TEST
@@ -54,21 +53,21 @@
 int main(int argc, char** argv) {
 //     Logger::assignLogger(new StdLogger());
 
-//     //****************ROS Units********************
-//     ros::init(argc, argv, "flight_scenario");
-//     ros::NodeHandle nh;
+    //****************ROS Units********************
+    // ros::init(argc, argv, "flight_scenario");
+    // ros::NodeHandle nh;
 
-//     ROSUnit* ros_arm_srv = new ROSUnit_Arm(nh);
-//     ROSUnit* ros_updt_ctr = new ROSUnit_UpdateController(nh);
-//     ROSUnit* ros_pos_sub = new ROSUnit_PositionSubscriber(nh);
-//     ROSUnit* ros_ori_sub = new ROSUnit_OrientationSubscriber(nh);
-//     ROSUnit* ros_rst_ctr = new ROSUnit_ResetController(nh);
-//     ROSUnit* ros_flight_command = new ROSUnit_FlightCommand(nh);
-//     ROSUnit* ros_info_sub = new ROSUnit_InfoSubscriber(nh);
-//     ROSUnit* ros_restnorm_settings = new ROSUnit_RestNormSettingsClnt(nh);
+    // ROSUnit* ros_arm_srv = new ROSUnit_Arm(nh);
+    // ROSUnit* ros_updt_ctr = new ROSUnit_UpdateController(nh);
+    // ROSUnit* ros_pos_sub = new ROSUnit_PositionSubscriber(nh);
+    // ROSUnit* ros_ori_sub = new ROSUnit_OrientationSubscriber(nh);
+    // ROSUnit* ros_rst_ctr = new ROSUnit_ResetController(nh);
+    // ROSUnit* ros_flight_command = new ROSUnit_FlightCommand(nh);
+    // ROSUnit* ros_info_sub = new ROSUnit_InfoSubscriber(nh);
+    // ROSUnit* ros_restnorm_settings = new ROSUnit_RestNormSettingsClnt(nh);
     
 
-//     ROSUnit_Factory ROSUnit_Factory_main{nh};
+//  ROSUnit_Factory ROSUnit_Factory_main{nh};
 // 	ROSUnit* ros_set_path_clnt = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Client,
 //                                                                     ROSUnit_msg_type::ROSUnit_Poses,
 //                                                                     "uav_control/set_path");
