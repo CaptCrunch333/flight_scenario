@@ -34,6 +34,8 @@
 #include "ROSUnit_ControlOutputSubscriber.hpp"
 #include "DNNConfirmationCondition.hpp"
 #include "SetCameraStatus.hpp"
+#include <math.h>
+
 
 #define TESTING
 #undef MISSION
