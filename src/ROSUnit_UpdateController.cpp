@@ -7,7 +7,7 @@ ROSUnit_UpdateController::ROSUnit_UpdateController(ros::NodeHandle& t_main_handl
     _ports = {_input_port_0, _input_port_1, _input_port_2};
     _update_controller_pid_client = t_main_handler.serviceClient<flight_controller::Update_Controller_PID>("update_controller/pid");
     _update_controller_mrft_client = t_main_handler.serviceClient<flight_controller::Update_Controller_MRFT>("update_controller/mrft");
-    _update_controller_sm_client = t_main_handler.serviceClient<flight_controller::Update_Controller_SM>("update_controller/sm");
+    _update_controller_bb_client = t_main_handler.serviceClient<flight_controller::Update_Controller_SM>("update_controller/sm");
 
 }
 
@@ -63,11 +63,11 @@ void ROSUnit_UpdateController::process(DataMessage* t_msg, Port* t_port) {
     
         flight_controller::Update_Controller_SM srv;
         srv.request.controller_parameters.id = (int)(_update_msg->getID());
-        srv.request.controller_parameters.sm_alpha1 = _update_msg->getSMParam().alpha1;
-        srv.request.controller_parameters.sm_alpha2 = _update_msg->getSMParam().alpha2;
-        srv.request.controller_parameters.sm_h1 = _update_msg->getSMParam().h1;
-        srv.request.controller_parameters.sm_h2 = _update_msg->getSMParam().h2;
-        bool success = _update_controller_sm_client.call(srv);
+        srv.request.controller_parameters.bb_alpha1 = _update_msg->getSMParam().alpha1;
+        srv.request.controller_parameters.bb_alpha2 = _update_msg->getSMParam().alpha2;
+        srv.request.controller_parameters.bb_h1 = _update_msg->getSMParam().h1;
+        srv.request.controller_parameters.bb_h2 = _update_msg->getSMParam().h2;
+        bool success = _update_controller_bb_client.call(srv);
         if (success)
         {
             ROS_INFO("CONTROLLER UPDATED. id: %d", srv.request.controller_parameters.id);

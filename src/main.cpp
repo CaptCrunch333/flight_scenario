@@ -231,113 +231,113 @@ int main(int argc, char** argv) {
 
     //******************Connections***************
 
-    update_controller_pid_x->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_y->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_z->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_roll->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_pitch->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_yaw->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_yaw_rate->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
-    update_controller_pid_mrft_Z_takeoff->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_x->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_y->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_z->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_roll->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_pitch->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_yaw->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_yaw_rate->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
+    // update_controller_pid_mrft_Z_takeoff->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::pid);
 
-    update_controller_mrft_x->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
-    update_controller_mrft_y->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
-    update_controller_mrft_z->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
-    update_controller_mrft_roll->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
-    update_controller_mrft_pitch->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
-    update_controller_mrft_yaw->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
-    update_controller_mrft_yaw_rate->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_x->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_y->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_z->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_roll->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_pitch->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_yaw->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
+    // update_controller_mrft_yaw_rate->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::mrft);
 
-    update_controller_bb_x->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::sm);
-    update_controller_bb_y->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::sm);
+    // update_controller_bb_x->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::sm);
+    // update_controller_bb_y->setEmittingChannel(ROSUnit_UpdateController::receiving_channels::sm);
 
-    update_controller_pid_x->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_y->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_z->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_roll->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_pitch->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_yaw->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_yaw_rate->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_pid_mrft_Z_takeoff->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
+    update_controller_pid_x->connect(ros_updt_ctr);
+    update_controller_pid_y->connect(ros_updt_ctr);
+    update_controller_pid_z->connect(ros_updt_ctr);
+    update_controller_pid_roll->connect(ros_updt_ctr);
+    update_controller_pid_pitch->connect(ros_updt_ctr);
+    update_controller_pid_yaw->connect(ros_updt_ctr);
+    update_controller_pid_yaw_rate->connect(ros_updt_ctr);
+    update_controller_pid_mrft_Z_takeoff->connect(ros_updt_ctr);
 
-    update_controller_mrft_x->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_mrft_y->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_mrft_z->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_mrft_roll->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_mrft_pitch->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_mrft_yaw->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_mrft_yaw_rate->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
+    update_controller_mrft_x->connect(ros_updt_ctr);
+    update_controller_mrft_y->connect(ros_updt_ctr);
+    update_controller_mrft_z->connect(ros_updt_ctr);
+    update_controller_mrft_roll->connect(ros_updt_ctr);
+    update_controller_mrft_pitch->connect(ros_updt_ctr);
+    update_controller_mrft_yaw->connect(ros_updt_ctr);
+    update_controller_mrft_yaw_rate->connect(ros_updt_ctr);
 
-    update_controller_bb_x->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-    update_controller_bb_y->addCallbackMsgReceiver((MsgReceiver*) ros_updt_ctr);
-
-
-    rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*) initial_pose_waypoint);
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) initial_pose_waypoint);
-    rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*) takeoff_relative_waypoint);
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) takeoff_relative_waypoint);
-    rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*) absolute_zero_Z_relative_waypoint);
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) absolute_zero_Z_relative_waypoint);
-    rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*) dnn_keep_height_to_1_yaw_to_0_waypoint);
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) dnn_keep_height_to_1_yaw_to_0_waypoint);
-    rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*) land_relative_waypoint);
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) land_relative_waypoint);
-
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) set_height_offset);
-
-    ID_switch_x_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_x_trigger);
-    ID_switch_x_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_x_trigger);
-    bounding_box_switch_x_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_bounding_box_switch_x_trigger);
-    bounding_box_switch_x_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_bounding_box_switch_x_trigger);
-    ID_switch_roll_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_roll_trigger);
-    ID_switch_roll_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_roll_trigger);
-    ID_switch_y_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_y_trigger);
-    ID_switch_y_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_y_trigger);
-    bounding_box_switch_y_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_bounding_box_switch_y_trigger);
-    bounding_box_switch_y_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_bounding_box_switch_y_trigger);
-    ID_switch_pitch_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_pitch_trigger);
-    ID_switch_pitch_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_pitch_trigger);
-    ID_switch_z_trigger_ON->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_z_trigger);
-    ID_switch_z_trigger_OFF->addCallbackMsgReceiver((MsgReceiver*) rosunit_ID_switch_z_trigger);
+    update_controller_bb_x->connect(ros_updt_ctr);
+    update_controller_bb_y->connect(ros_updt_ctr);
 
 
-    reset_z->addCallbackMsgReceiver((MsgReceiver*) ros_rst_ctr);
-    reset_z_id->addCallbackMsgReceiver((MsgReceiver*) ros_rst_ctr);
-    reset_x->addCallbackMsgReceiver((MsgReceiver*) ros_rst_ctr);
+    rosunit_yaw_provider->connect(initial_pose_waypoint);
+    ros_pos_sub->connect(initial_pose_waypoint);
+    rosunit_yaw_provider->connect(takeoff_relative_waypoint);
+    ros_pos_sub->connect(takeoff_relative_waypoint);
+    rosunit_yaw_provider->connect(absolute_zero_Z_relative_waypoint);
+    ros_pos_sub->connect(absolute_zero_Z_relative_waypoint);
+    rosunit_yaw_provider->connect(dnn_keep_height_to_1_yaw_to_0_waypoint);
+    ros_pos_sub->connect(dnn_keep_height_to_1_yaw_to_0_waypoint);
+    rosunit_yaw_provider->connect(land_relative_waypoint);
+    ros_pos_sub->connect(land_relative_waypoint);
 
-    arm_motors->addCallbackMsgReceiver((MsgReceiver*) ros_arm_srv);
-    disarm_motors->addCallbackMsgReceiver((MsgReceiver*) ros_arm_srv);
+    ros_pos_sub->connect(set_height_offset);
 
-    ros_flight_command->addCallbackMsgReceiver((MsgReceiver*) flight_command);
+    ID_switch_x_trigger_ON->connect(rosunit_ID_switch_x_trigger);
+    ID_switch_x_trigger_OFF->connect(rosunit_ID_switch_x_trigger);
+    bounding_box_switch_x_trigger_ON->connect(rosunit_bounding_box_switch_x_trigger);
+    bounding_box_switch_x_trigger_OFF->connect(rosunit_bounding_box_switch_x_trigger);
+    ID_switch_roll_trigger_ON->connect(rosunit_ID_switch_roll_trigger);
+    ID_switch_roll_trigger_OFF->connect(rosunit_ID_switch_roll_trigger);
+    ID_switch_y_trigger_ON->connect(rosunit_ID_switch_y_trigger);
+    ID_switch_y_trigger_OFF->connect(rosunit_ID_switch_y_trigger);
+    bounding_box_switch_y_trigger_ON->connect(rosunit_bounding_box_switch_y_trigger);
+    bounding_box_switch_y_trigger_OFF->connect(rosunit_bounding_box_switch_y_trigger);
+    ID_switch_pitch_trigger_ON->connect(rosunit_ID_switch_pitch_trigger);
+    ID_switch_pitch_trigger_OFF->connect(rosunit_ID_switch_pitch_trigger);
+    ID_switch_z_trigger_ON->connect(rosunit_ID_switch_z_trigger);
+    ID_switch_z_trigger_OFF->connect(rosunit_ID_switch_z_trigger);
 
-    ros_set_mission_state_srv->addCallbackMsgReceiver((MsgReceiver*) cs_to_taking_off);
-    ros_set_mission_state_srv->addCallbackMsgReceiver((MsgReceiver*) cs_to_landing);
 
-    ros_info_sub->addCallbackMsgReceiver((MsgReceiver*) state_monitor);
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) state_monitor);
+    reset_z->connect(ros_rst_ctr);
+    reset_z_id->connect(ros_rst_ctr);
+    reset_x->connect(ros_rst_ctr);
 
-    state_monitor->addCallbackMsgReceiver((MsgReceiver*)ros_updt_uav_control_state_clnt);
+    arm_motors->connect(ros_arm_srv);
+    disarm_motors->connect(ros_arm_srv);
 
-    set_settings->addCallbackMsgReceiver((MsgReceiver*)ros_restnorm_settings);
-    land_set_settings->addCallbackMsgReceiver((MsgReceiver*)ros_restnorm_settings);
-    waypoint_set_settings->addCallbackMsgReceiver((MsgReceiver*)ros_restnorm_settings);
+    ros_flight_command->connect(flight_command);
+
+    ros_set_mission_state_srv->connect(cs_to_taking_off);
+    ros_set_mission_state_srv->connect(cs_to_landing);
+
+    ros_info_sub->connect(state_monitor);
+    ros_pos_sub->connect(state_monitor);
+
+    state_monitor->connect(ros_updt_uav_control_state_clnt);
+
+    set_settings->connect(ros_restnorm_settings);
+    land_set_settings->connect(ros_restnorm_settings);
+    waypoint_set_settings->connect(ros_restnorm_settings);
     
-    set_camera_enabled->addCallbackMsgReceiver((MsgReceiver*) rosunit_camera_status);
-    set_camera_disabled->addCallbackMsgReceiver((MsgReceiver*) rosunit_camera_status);
-    set_height_offset->addCallbackMsgReceiver((MsgReceiver*) ros_set_height_offset);
-    initial_pose_waypoint->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    takeoff_relative_waypoint->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_zero_Z_relative_waypoint->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    dnn_keep_height_to_1_yaw_to_0_waypoint->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_origin_1m_height->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_1->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_2->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_3->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_4->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_5->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_6->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    absolute_waypoint_square_7->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
-    land_relative_waypoint->addCallbackMsgReceiver((MsgReceiver*) ros_set_path_clnt);
+    set_camera_enabled->connect(rosunit_camera_status);
+    set_camera_disabled->connect(rosunit_camera_status);
+    set_height_offset->connect(ros_set_height_offset);
+    initial_pose_waypoint->connect(ros_set_path_clnt);
+    takeoff_relative_waypoint->connect(ros_set_path_clnt);
+    absolute_zero_Z_relative_waypoint->connect(ros_set_path_clnt);
+    dnn_keep_height_to_1_yaw_to_0_waypoint->connect(ros_set_path_clnt);
+    absolute_origin_1m_height->connect(ros_set_path_clnt);
+    absolute_waypoint_square_1->connect(ros_set_path_clnt);
+    absolute_waypoint_square_2->connect(ros_set_path_clnt);
+    absolute_waypoint_square_3->connect(ros_set_path_clnt);
+    absolute_waypoint_square_4->connect(ros_set_path_clnt);
+    absolute_waypoint_square_5->connect(ros_set_path_clnt);
+    absolute_waypoint_square_6->connect(ros_set_path_clnt);
+    absolute_waypoint_square_7->connect(ros_set_path_clnt);
+    land_relative_waypoint->connect(ros_set_path_clnt);
 
     //*************Setting Flight Elements*************
     #ifdef QUAD
@@ -747,7 +747,7 @@ int main(int argc, char** argv) {
     z_cross_takeoff_waypoint.selected_dim=Dimension3D::Z;
     z_cross_takeoff_waypoint.condition_value = 0.9;
     z_cross_takeoff_waypoint.condition_met_for_larger=true;
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) &z_cross_takeoff_waypoint);
+    ros_pos_sub->connect(&z_cross_takeoff_waypoint);
 
     WaitForCondition* z_cross_takeoff_waypoint_check = new WaitForCondition((Condition*)&z_cross_takeoff_waypoint);
 
@@ -755,21 +755,21 @@ int main(int argc, char** argv) {
     z_cross_land_waypoint.selected_dim=Dimension3D::Z;
     z_cross_land_waypoint.condition_value=0.1;
     z_cross_land_waypoint.condition_met_for_larger=false;
-    ros_pos_sub->addCallbackMsgReceiver((MsgReceiver*) &z_cross_land_waypoint);
+    ros_pos_sub->connect(&z_cross_land_waypoint);
 
     WaitForCondition* z_cross_land_waypoint_check = new WaitForCondition((Condition*)&z_cross_land_waypoint);
 
 
     DNNConfirmationCondition DNN_confirmed_x = DNNConfirmationCondition(control_system::x);
-    rosunit_dnn_confirmation->addCallbackMsgReceiver((MsgReceiver*) &DNN_confirmed_x);
+    rosunit_dnn_confirmation->connect(&DNN_confirmed_x);
     DNNConfirmationCondition DNN_confirmed_y = DNNConfirmationCondition(control_system::y);
-    rosunit_dnn_confirmation->addCallbackMsgReceiver((MsgReceiver*) &DNN_confirmed_y);
+    rosunit_dnn_confirmation->connect(&DNN_confirmed_y);
     DNNConfirmationCondition DNN_confirmed_z = DNNConfirmationCondition(control_system::z);
-    rosunit_dnn_confirmation->addCallbackMsgReceiver((MsgReceiver*) &DNN_confirmed_z);
+    rosunit_dnn_confirmation->connect(&DNN_confirmed_z);
     DNNConfirmationCondition DNN_confirmed_roll = DNNConfirmationCondition(control_system::roll);
-    rosunit_dnn_confirmation->addCallbackMsgReceiver((MsgReceiver*) &DNN_confirmed_roll);
+    rosunit_dnn_confirmation->connect(&DNN_confirmed_roll);
     DNNConfirmationCondition DNN_confirmed_pitch = DNNConfirmationCondition(control_system::pitch);
-    rosunit_dnn_confirmation->addCallbackMsgReceiver((MsgReceiver*) &DNN_confirmed_pitch);
+    rosunit_dnn_confirmation->connect(&DNN_confirmed_pitch);
 
 
     WaitForCondition* DNN_confirmation_x = new WaitForCondition((Condition*)&DNN_confirmed_x);
@@ -802,8 +802,8 @@ int main(int argc, char** argv) {
     mrft_pipeline.addElement((FlightElement*)update_controller_bb_x);
     mrft_pipeline.addElement((FlightElement*)update_controller_bb_y);
 
-    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_x); 
-    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_y);  
+    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_x); 
+    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_y);  
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrftpid_z);  
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_roll); 
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_pitch);  
@@ -822,7 +822,7 @@ int main(int argc, char** argv) {
     mrft_pipeline.addElement((FlightElement*)takeoff_relative_waypoint);
     mrft_pipeline.addElement((FlightElement*)flight_command);
     mrft_pipeline.addElement((FlightElement*)land_set_settings);   
-    // mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_x);
+    // mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_x);
     // mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_roll);
     // mrft_pipeline.addElement((FlightElement*)flight_command);
     mrft_pipeline.addElement((FlightElement*)&wait_100ms);
@@ -849,10 +849,10 @@ int main(int argc, char** argv) {
     inner_pipeline.addElement((FlightElement*)dnn_keep_height_to_1_yaw_to_0_waypoint);
     inner_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_roll); //MAYBE REMOVE
     inner_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_pitch); //MAYBE REMOVE
-    inner_pipeline.addElement((FlightElement*)switch_block_sm_to_mrft_x);
-    inner_pipeline.addElement((FlightElement*)switch_block_sm_to_mrft_y);
-    // inner_pipeline.addElement((FlightElement*)switch_block_sm_to_pid_x);
-    // inner_pipeline.addElement((FlightElement*)switch_block_sm_to_pid_y);
+    inner_pipeline.addElement((FlightElement*)switch_block_bb_to_mrft_x);
+    inner_pipeline.addElement((FlightElement*)switch_block_bb_to_mrft_y);
+    // inner_pipeline.addElement((FlightElement*)switch_block_bb_to_pid_x);
+    // inner_pipeline.addElement((FlightElement*)switch_block_bb_to_pid_y);
 
     y_pipeline.addElement((FlightElement*)DNN_confirmation_y);
     y_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_y);
@@ -888,8 +888,8 @@ int main(int argc, char** argv) {
     mrft_pipeline.addElement((FlightElement*)set_height_offset);
     mrft_pipeline.addElement((FlightElement*)&wait_1s);
 
-    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_x); 
-    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_y);  
+    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_x); 
+    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_y);  
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrftpid_z);  
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_roll); 
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_pitch);  
@@ -933,8 +933,8 @@ int main(int argc, char** argv) {
     inner_pipeline.addElement((FlightElement*)DNN_confirmation_pitch);
     inner_pipeline.addElement((FlightElement*)DNN_confirmation_z);
     inner_pipeline.addElement((FlightElement*)dnn_keep_height_to_1_yaw_to_0_waypoint);
-    inner_pipeline.addElement((FlightElement*)switch_block_sm_to_mrft_x);
-    inner_pipeline.addElement((FlightElement*)switch_block_sm_to_mrft_y);
+    inner_pipeline.addElement((FlightElement*)switch_block_bb_to_mrft_x);
+    inner_pipeline.addElement((FlightElement*)switch_block_bb_to_mrft_y);
 
     y_pipeline.addElement((FlightElement*)DNN_confirmation_y);
     y_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_y);
@@ -975,10 +975,10 @@ int main(int argc, char** argv) {
     mrft_pipeline.addElement((FlightElement*)reset_z);
     mrft_pipeline.addElement((FlightElement*)takeoff_relative_waypoint);
     mrft_pipeline.addElement((FlightElement*)flight_command);
-    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_x);
+    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_x);
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_roll);
     mrft_pipeline.addElement((FlightElement*)flight_command);
-    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_y);
+    mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_y);
     mrft_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_pitch);
     mrft_pipeline.addElement((FlightElement*)flight_command);
     mrft_pipeline.addElement((FlightElement*)land_set_settings);   
@@ -991,11 +991,11 @@ int main(int argc, char** argv) {
 
     roll_pipeline.addElement((FlightElement*)DNN_confirmation_roll);
     roll_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_roll);
-    roll_pipeline.addElement((FlightElement*)switch_block_sm_to_pid_x);
+    roll_pipeline.addElement((FlightElement*)switch_block_bb_to_pid_x);
 
     pitch_pipeline.addElement((FlightElement*)DNN_confirmation_pitch);
     pitch_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_pitch);
-    pitch_pipeline.addElement((FlightElement*)switch_block_sm_to_pid_y);
+    pitch_pipeline.addElement((FlightElement*)switch_block_bb_to_pid_y);
 
     y_pipeline.addElement((FlightElement*)DNN_confirmation_y);
     y_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_y);
@@ -1050,11 +1050,11 @@ int main(int argc, char** argv) {
 
     // roll_pipeline.addElement((FlightElement*)DNN_confirmation_roll);
     // roll_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_roll);
-    // roll_pipeline.addElement((FlightElement*)switch_block_sm_to_pid_x);
+    // roll_pipeline.addElement((FlightElement*)switch_block_bb_to_pid_x);
 
     // pitch_pipeline.addElement((FlightElement*)DNN_confirmation_pitch);
     // pitch_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_pitch);
-    // pitch_pipeline.addElement((FlightElement*)switch_block_sm_to_pid_y);
+    // pitch_pipeline.addElement((FlightElement*)switch_block_bb_to_pid_y);
 
     y_pipeline.addElement((FlightElement*)DNN_confirmation_y);
     y_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_y);
@@ -1293,8 +1293,8 @@ int main(int argc, char** argv) {
     mrft_takeoff_dnn_pipeline.addElement((FlightElement*)update_controller_pid_yaw);
     mrft_takeoff_dnn_pipeline.addElement((FlightElement*)update_controller_pid_yaw_rate);
 
-    mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_x);
-    mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_sm_y);
+    mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_x);
+    mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_bb_y);
     mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_pitch);
     mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_roll);
     // mrft_takeoff_dnn_pipeline.addElement((FlightElement*)switch_block_pid_to_mrft_z); //TODO FIX HERE TO MRFT+PID
@@ -1328,13 +1328,13 @@ int main(int argc, char** argv) {
     roll_pipeline.addElement((FlightElement*)initial_pose_waypoint);
     roll_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_roll);
     //TODO check if a timer here is enough
-    roll_pipeline.addElement((FlightElement*)switch_block_sm_to_mrft_x);
+    roll_pipeline.addElement((FlightElement*)switch_block_bb_to_mrft_x);
 
     pitch_pipeline.addElement((FlightElement*)DNN_confirmation_pitch);
     pitch_pipeline.addElement((FlightElement*)initial_pose_waypoint);
     pitch_pipeline.addElement((FlightElement*)switch_block_mrft_to_pid_pitch);
     //TODO check if a timer here is enough
-    pitch_pipeline.addElement((FlightElement*)switch_block_sm_to_mrft_y);
+    pitch_pipeline.addElement((FlightElement*)switch_block_bb_to_mrft_y);
 
 
     

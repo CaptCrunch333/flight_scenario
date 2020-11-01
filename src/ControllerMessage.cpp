@@ -47,11 +47,11 @@ void ControllerMessage::setMRFTParam(MRFT_parameters t_param){
 
 void ControllerMessage::setSMParam(BB_parameters t_param){
 
-    _sm_param.h1 = t_param.h1;
-    _sm_param.h2 = t_param.h2;
-    _sm_param.alpha1 = t_param.alpha1;
-    _sm_param.alpha2 = t_param.alpha2;
-    _sm_param.id = t_param.id;
+    _bb_param.h1 = t_param.h1;
+    _bb_param.h2 = t_param.h2;
+    _bb_param.alpha1 = t_param.alpha1;
+    _bb_param.alpha2 = t_param.alpha2;
+    _bb_param.id = t_param.id;
     if(t_param.id!=block_id::NULL_ID){
         _id = t_param.id;
     }

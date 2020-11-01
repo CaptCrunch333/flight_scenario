@@ -16,7 +16,7 @@ private:
     Port* _input_port_2;
     ros::ServiceClient _update_controller_pid_client;
     ros::ServiceClient _update_controller_mrft_client;
-    ros::ServiceClient _update_controller_sm_client;
+    ros::ServiceClient _update_controller_bb_client;
 
 
 public:
