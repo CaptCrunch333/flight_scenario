@@ -13,10 +13,12 @@ void FlightScenario::AddFlightPipeline(FlightPipeline* t_flight_pipeline){
     // Creating a new thread 
     pthread_create(&ptid, NULL, &pipelineThreadStarter, (void*)t_flight_pipeline); 
 }
+
 void FlightScenario::StartScenario(){
     usleep(100000);
     FlightScenario::_start_locked=false;
 }
+
 void FlightScenario::ResetScenario(){
 
 }
