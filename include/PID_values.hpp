@@ -10,7 +10,6 @@ public:
 	uint8_t en_pv_derivation=0;	   
 };
 
-
 class PID_data {
 
 public:

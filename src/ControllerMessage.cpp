@@ -25,6 +25,7 @@ void ControllerMessage::setPIDParam(PID_parameters t_param){
     _pid_param.kdd = t_param.kdd;
     _pid_param.anti_windup = t_param.anti_windup;
     _pid_param.en_pv_derivation = t_param.en_pv_derivation;
+    _pid_param.dt = t_param.dt;
     _pid_param.id = t_param.id; //TODO check if this is needed
     if(t_param.id!=block_id::NULL_ID){
         _id = t_param.id;

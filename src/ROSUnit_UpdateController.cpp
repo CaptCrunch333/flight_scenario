@@ -28,6 +28,8 @@ void ROSUnit_UpdateController::process(DataMessage* t_msg, Port* t_port) {
         srv.request.controller_parameters.pid_kdd = _update_msg->getPIDParam().kdd;
         srv.request.controller_parameters.pid_anti_windup = _update_msg->getPIDParam().anti_windup;
         srv.request.controller_parameters.pid_en_pv_derivation = _update_msg->getPIDParam().en_pv_derivation;
+        srv.request.controller_parameters.pid_dt = _update_msg->getPIDParam().dt;
+        std::cout << "pid dt to be sent " << (float)_update_msg->getPIDParam().dt << "\n";
         bool success = _update_controller_pid_client.call(srv);
         if (success)
         {

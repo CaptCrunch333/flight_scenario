@@ -5,10 +5,10 @@ Port* ROSUnit_PositionSubscriber::_output_port_0 = new OutputPort(ports_id::OP_0
 
 ROSUnit_PositionSubscriber::ROSUnit_PositionSubscriber(ros::NodeHandle& t_main_handler) : ROSUnit(t_main_handler)  {
 
-    _sub_position = t_main_handler.subscribe("uav_control/uav_position", 2, callbackPosition);
+    _sub_position = t_main_handler.subscribe("/global2inertial/position", 2, callbackPosition);
     _instance_ptr = this;
     _ports = {_output_port_0};
-    }
+}
 
 ROSUnit_PositionSubscriber::~ROSUnit_PositionSubscriber() {
 
