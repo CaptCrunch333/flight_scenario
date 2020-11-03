@@ -17,4 +17,3 @@ UpdateController::UpdateController(){
 UpdateController::~UpdateController(){
 
 }
-
